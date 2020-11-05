@@ -1,14 +1,14 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 import routes from "../../routes";
 import App from "../../containers/App";
 
-const FadingRoute = ({component: Component, routes, ...rest}) => {
+const FadingRoute = ({component: Component, routes, ...rest}) => (
     <Route {...rest} render={props => (
-        <Component {...props} routes={routes} />
+        <Component {...props} routes={routes}/>
     )}/>
-};
+);
 
 export default class MainAppView extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ export default class MainAppView extends React.Component {
         let res = null;
         if (routes.length > 0) {
             res = routes.map((route, index) => (
-                <FadingRoute 
+                <FadingRoute
                     key={index}
                     path={route.path}
                     exact={route.exact}
@@ -36,10 +36,11 @@ export default class MainAppView extends React.Component {
     }
 
     render() {
-
-        return(
-            <App location={this.props.location} routes={routes}>
-                {this.renderRouter(routes, this.props.location)}
+        // eslint-disable-next-line react/prop-types
+        const {location} = this.props;
+        return (
+            <App location={location} routes={routes}>
+                {this.renderRouter(routes, location)}
             </App>
         );
     }

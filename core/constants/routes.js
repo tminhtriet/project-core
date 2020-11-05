@@ -1,1 +1,1 @@
-export const ROOT_APP = "/fimo";
+export const ROOT_APP = "/app-core";

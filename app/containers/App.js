@@ -13,7 +13,7 @@ class App extends React.Component{
 
     render() {
         return (
-            <div className="fimo-app-wrapper">
+            <div className="app-core-wrapper">
                 {this.props.children}
             </div>
         );

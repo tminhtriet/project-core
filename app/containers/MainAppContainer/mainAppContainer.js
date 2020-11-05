@@ -6,7 +6,7 @@ import MainAppView from "../../views/MainAppView";
 
 const mapStateToProps = (state) => {
     return {
-        ususerLoginReducererLogin: state.userLoginReducer
+        userLoginReducer: state.userLoginReducer
     };
 };
 
